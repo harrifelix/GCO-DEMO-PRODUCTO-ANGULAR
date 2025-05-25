@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Tutorial } from '../models/producto.model';
+import { Producto } from '../models/producto.model';
 
 const baseUrl = 'http://localhost:8080/producto';
 
@@ -11,12 +11,12 @@ const baseUrl = 'http://localhost:8080/producto';
 export class TutorialService {
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Tutorial[]> {
-    return this.http.get<Tutorial[]>(baseUrl);
+  getAll(): Observable<Producto[]> {
+    return this.http.get<Producto[]>(baseUrl);
   }
 
-  get(id: any): Observable<Tutorial> {
-    return this.http.get<Tutorial>(`${baseUrl}/byId/${id}`);
+  get(id: any): Observable<Producto> {
+    return this.http.get<Producto>(`${baseUrl}/byId/${id}`);
   }
 
   create(data: any): Observable<any> {
@@ -35,7 +35,7 @@ export class TutorialService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(codigo: any): Observable<Tutorial[]> {
-    return this.http.get<Tutorial[]>(`${baseUrl}?codigo=${codigo}`);
+  findByTitle(codigo: any): Observable<Producto[]> {
+    return this.http.get<Producto[]>(`${baseUrl}?codigo=${codigo}`);
   }
 }

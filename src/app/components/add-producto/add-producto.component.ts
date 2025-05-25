@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Tutorial } from 'src/app/models/producto.model';
+import { Producto } from 'src/app/models/producto.model';
 import { TutorialService } from 'src/app/services/producto.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { TutorialService } from 'src/app/services/producto.service';
   styleUrls: ['./add-producto.component.css'],
 })
 export class AddTutorialComponent {
-  tutorial: Tutorial = {
+  tutorial: Producto = {
    nombre:"",
    descripcion:"",
     precio:"",

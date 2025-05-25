@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tutorial } from 'src/app/models/producto.model';
+import { Producto } from 'src/app/models/producto.model';
 import { TutorialService } from 'src/app/services/producto.service';
 
 @Component({
@@ -8,8 +8,8 @@ import { TutorialService } from 'src/app/services/producto.service';
   styleUrls: ['./producto-list.component.css'],
 })
 export class TutorialsListComponent {
-  tutorials?: Tutorial[];
-  currentTutorial: Tutorial = {};
+  tutorials?: Producto[];
+  currentTutorial: Producto = {};
   currentIndex = -1;
   codigo = '';
 
@@ -35,7 +35,7 @@ export class TutorialsListComponent {
     this.currentIndex = -1;
   }
 
-  setActiveTutorial(tutorial: Tutorial, index: number): void {
+  setActiveTutorial(tutorial: Producto, index: number): void {
     this.currentTutorial = tutorial;
     this.currentIndex = index;
   }

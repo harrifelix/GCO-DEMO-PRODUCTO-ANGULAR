@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TutorialService } from 'src/app/services/producto.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Tutorial } from 'src/app/models/producto.model';
+import { Producto } from 'src/app/models/producto.model';
 
 @Component({
   selector: 'app-producto-details',
@@ -11,7 +11,7 @@ import { Tutorial } from 'src/app/models/producto.model';
 export class TutorialDetailsComponent {
   @Input() viewMode = false;
 
-  @Input() currentTutorial: Tutorial = {
+  @Input() currentTutorial: Producto = {
    nombre:'',
    descripcion:'',
     precio:'',
