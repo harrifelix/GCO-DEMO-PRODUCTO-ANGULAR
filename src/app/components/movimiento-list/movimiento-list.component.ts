@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movimiento } from 'src/app/models/movimiento.model';
 import { Producto } from 'src/app/models/producto.model';
 import { MovimientoService } from 'src/app/services/movimiento.service';
-import { TutorialService } from 'src/app/services/producto.service';
+import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
   selector: 'app-movimiento-list',
@@ -10,21 +10,21 @@ import { TutorialService } from 'src/app/services/producto.service';
   styleUrls: ['./movimiento-list.component.css'],
 })
 export class MovimientoListComponent {
-  tutorials?: Movimiento[];
-  currentTutorial: Movimiento = {};
+  movimientos?: Movimiento[];
+  currentMovimiento: Movimiento = {};
   currentIndex = -1;
   codigo = '';
 
-  constructor(private tutorialService: MovimientoService) {}
+  constructor(private movimientoService: MovimientoService) {}
 
   ngOnInit(): void {
-    this.retrieveTutorials();
+    this.retrieveProductos();
   }
 
-  retrieveTutorials(): void {
-    this.tutorialService.getAll().subscribe({
+  retrieveProductos(): void {
+    this.movimientoService.getAll().subscribe({
       next: (data) => {
-        this.tutorials = data;
+        this.movimientos = data;
         console.log(data);
       },
       error: (e) => console.error(e)
@@ -32,13 +32,13 @@ export class MovimientoListComponent {
   }
 
   refreshList(): void {
-    this.retrieveTutorials();
-    this.currentTutorial = {};
+    this.retrieveProductos();
+    this.currentMovimiento = {};
     this.currentIndex = -1;
   }
 
-  setActiveTutorial(tutorial: Producto, index: number): void {
-    this.currentTutorial = tutorial;
+  setActiveProducto(movimiento: Producto, index: number): void {
+    this.currentMovimiento = movimiento;
     this.currentIndex = index;
   }
 

@@ -8,7 +8,7 @@ const baseUrl = 'http://localhost:8080/producto';
 @Injectable({
   providedIn: 'root',
 })
-export class TutorialService {
+export class ProductoService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Producto[]> {
@@ -35,7 +35,7 @@ export class TutorialService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(codigo: any): Observable<Producto> {
+  findByCodigo(codigo: any): Observable<Producto> {
     return this.http.get<Producto>(`${baseUrl}/byCodigo/${codigo}`);
   }
     

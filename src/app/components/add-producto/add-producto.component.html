@@ -8,7 +8,7 @@
           class="form-control"
           id="nombre"
           required
-          [(ngModel)]="tutorial.nombre"
+          [(ngModel)]="producto.nombre"
           name="nombre"
         />
       </div>
@@ -19,7 +19,7 @@
           class="form-control"
           id="descripcion"
           required
-          [(ngModel)]="tutorial.descripcion"
+          [(ngModel)]="producto.descripcion"
           name="descripcion"
         />
       </div>
@@ -30,7 +30,7 @@
           class="form-control"
           id="precio"
           required
-          [(ngModel)]="tutorial.precio"
+          [(ngModel)]="producto.precio"
           name="precio"
         />
       </div>
@@ -41,7 +41,7 @@
           class="form-control"
           id="stock"
           required
-          [(ngModel)]="tutorial.stock"
+          [(ngModel)]="producto.stock"
           name="stock"
         />
       </div>
@@ -53,7 +53,7 @@
           class="form-control"
           id="categoria"
           required
-          [(ngModel)]="tutorial.categoria"
+          [(ngModel)]="producto.categoria"
           name="categoria"
         />
       </div>
@@ -65,7 +65,7 @@
           class="form-control"
           id="codigo"
           required
-          [(ngModel)]="tutorial.codigo"
+          [(ngModel)]="producto.codigo"
           name="codigo"
         />
       </div>
@@ -77,17 +77,17 @@
           class="form-control"
           id="fechaCreacion"
           required
-          [(ngModel)]="tutorial.fechaCreacion"
+          [(ngModel)]="producto.fechaCreacion"
           name="fechaCreacion"
         />
         
       </div>
-      <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+      <button (click)="saveProducto()" class="btn btn-success">Save</button>
     </div>
 
     <div *ngIf="submitted">
       <h4>Tutorial was submitted successfully!</h4>
-      <button class="btn btn-success" (click)="newTutorial()">Add</button>
+      <button class="btn btn-success" (click)="newProducto()">Add</button>
     </div>
   </div>
 </div>

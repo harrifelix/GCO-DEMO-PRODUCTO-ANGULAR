@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TutorialService } from 'src/app/services/producto.service';
+import { ProductoService } from 'src/app/services/producto.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto.model';
 
@@ -11,7 +11,8 @@ import { Producto } from 'src/app/models/producto.model';
 export class TutorialDetailsComponent {
   @Input() viewMode = false;
 
-  @Input() currentTutorial: Producto = {
+  @Input() currentProducto: Producto = {
+    id:0,
    nombre:'',
    descripcion:'',
     precio:'',
@@ -24,7 +25,7 @@ export class TutorialDetailsComponent {
   message = '';
 
   constructor(
-    private tutorialService: TutorialService,
+    private productoService: ProductoService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -32,25 +33,25 @@ export class TutorialDetailsComponent {
   ngOnInit(): void {
     if (!this.viewMode) {
       this.message = '';
-      this.getTutorial(this.route.snapshot.params['id']);
+      this.getProducto(this.route.snapshot.params['id']);
     }
   }
 
-  getTutorial(id: string): void {
-    this.tutorialService.get(id).subscribe({
+  getProducto(id: string): void {
+    this.productoService.get(id).subscribe({
       next: (data) => {
-        this.currentTutorial = data;
+        this.currentProducto = data;
         console.log(data);
       },
       error: (e) => console.error(e)
     });
   }
 
-  updateTutorial(): void {
+  updateProducto(): void {
     this.message = '';
 
-    this.tutorialService
-      .update( this.currentTutorial)
+    this.productoService
+      .update( this.currentProducto)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -63,8 +64,8 @@ export class TutorialDetailsComponent {
       });
   }
 
-  deleteTutorial(): void {
-    this.tutorialService.delete(this.currentTutorial.id).subscribe({
+  deleteProducto(): void {
+    this.productoService.delete(this.currentProducto.id).subscribe({
       next: (res) => {
         console.log(res);
         this.router.navigate(['/tutorials']);

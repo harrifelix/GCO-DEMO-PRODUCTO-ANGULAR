@@ -18,7 +18,7 @@
         <button
           class="btn btn-outline-secondary"
           type="button"
-          (click)="searchTitle()"
+          (click)="search()"
         >
           Buscar por Criterios
         </button>
@@ -43,15 +43,15 @@
                 </thead>
                 <tbody>
                    
-                    <tr *ngFor="let tutorial of tutorials; let i = index"
+                    <tr *ngFor="let producto of productos; let i = index"
         [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(tutorial, i)">
-                        <td>{{tutorial.id}}</td>
-                        <td>{{tutorial.nombre}}</td>
-                        <td>{{tutorial.descripcion}}</td>
+        (click)="setActiveProducto(producto, i)">
+                        <td>{{producto.id}}</td>
+                        <td>{{producto.nombre}}</td>
+                        <td>{{producto.descripcion}}</td>
                        
-                                       <td>{{tutorial.precio}}</td>
-                        <td>{{tutorial.stock}}</td>
+                                       <td>{{producto.precio}}</td>
+                        <td>{{producto.stock}}</td>
              
                     </tr>
                 </tbody>
@@ -62,7 +62,7 @@
   <div class="col-md-3">
     <app-producto-details
       [viewMode]="true"
-      [currentTutorial]="currentTutorial"
+      [currentProducto]="currentProducto"
     ></app-producto-details>
   </div>
 </div>

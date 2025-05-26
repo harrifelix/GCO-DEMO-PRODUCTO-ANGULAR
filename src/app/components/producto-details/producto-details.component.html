@@ -1,49 +1,49 @@
 <div *ngIf="viewMode; else editable">
-  <div *ngIf="currentTutorial.id">
+  <div *ngIf="currentProducto.id">
 
     <h4>Detalle Producto</h4>
     <div>
-      <label><strong>nombre:</strong></label> {{ currentTutorial.nombre }}
+      <label><strong>nombre:</strong></label> {{ currentProducto.nombre }}
     </div>
     <div>
       <label><strong>Descripcion:</strong></label>
-      {{ currentTutorial.descripcion }}
+      {{ currentProducto.descripcion }}
     </div>
     <div>
       <label><strong>Precio:</strong></label>
-      {{ currentTutorial.precio }}
+      {{ currentProducto.precio }}
     </div>
   <div>
       <label><strong>Stock:</strong></label>
-      {{ currentTutorial.stock }}
+      {{ currentProducto.stock }}
     </div>
       <div>
       <label><strong>Categoria:</strong></label>
-      {{ currentTutorial.categoria }}
+      {{ currentProducto.categoria }}
     </div>
          <div>
       <label><strong>Codigo:</strong></label>
-      {{ currentTutorial.codigo }}
+      {{ currentProducto.codigo }}
     </div>
              <div>
       <label><strong>Fecha Creación:</strong></label>
   
-      {{currentTutorial.fechaCreacion |date:"longDate" }}
+      {{currentProducto.fechaCreacion |date:"longDate" }}
     </div>
     <a class="badge badge-warning"
-      routerLink="/tutorials/{{ currentTutorial.id }}">
+      routerLink="/tutorials/{{ currentProducto.id }}">
       Edit
     </a>
   </div>
 
-  <div *ngIf="!currentTutorial">
+  <div *ngIf="!currentProducto">
     <br />
     <p>Please click on a Tutorial...</p>
   </div>
 </div>
 
 <ng-template #editable>
-  <div *ngIf="currentTutorial.id" class="edit-form">
+  <div *ngIf="currentProducto.id" class="edit-form">
     <h4>Tutorial</h4>
     <form>
       <div class="form-group">
@@ -53,7 +53,7 @@
           class="form-control"
           id="nombre"
           required
-          [(ngModel)]="currentTutorial.nombre"
+          [(ngModel)]="currentProducto.nombre"
           name="nombre"
         />
       </div>
@@ -64,7 +64,7 @@
           class="form-control"
           id="descripcion"
           required
-          [(ngModel)]="currentTutorial.descripcion"
+          [(ngModel)]="currentProducto.descripcion"
           name="descripcion"
         />
       </div>
@@ -75,30 +75,30 @@
           class="form-control"
           id="precio"
           required
-          [(ngModel)]="currentTutorial.precio"
+          [(ngModel)]="currentProducto.precio"
           name="precio"
         />
       </div>
 
-      <div class="form-group">
+                  <div class="form-group">
         <label for="stock">Stock</label>
         <input type="number"
           class="form-control"
           id="stock"
           required
-          [(ngModel)]="currentTutorial.stock"
+          [(ngModel)]="currentProducto.stock"
           name="stock"
         />
       </div>
 
 
-       <div class="form-group">
+                  <div class="form-group">
         <label for="categoria">Categoria</label>
         <input
           class="form-control"
           id="categoria"
           required
-          [(ngModel)]="currentTutorial.categoria"
+          [(ngModel)]="currentProducto.categoria"
           name="categoria"
         />
       </div>
@@ -110,7 +110,7 @@
           class="form-control"
           id="codigo"
           required
-          [(ngModel)]="currentTutorial.codigo"
+          [(ngModel)]="currentProducto.codigo"
           name="codigo"
         />
       </div>
@@ -122,7 +122,7 @@
           class="form-control"
           id="fechaCreacion"
           required
-          [(ngModel)]="currentTutorial.fechaCreacion"
+          [(ngModel)]="currentProducto.fechaCreacion"
           name="fechaCreacion"
         />
         
@@ -131,21 +131,21 @@
   
     </form>
 
-    <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+    <button class="badge badge-danger mr-2" (click)="deleteProducto()">
       Delete
     </button>
 
     <button
       type="submit"
       class="badge badge-success mb-2"
-      (click)="updateTutorial()"
+      (click)="updateProducto()"
     >
       Update
     </button>
     <p>{{ message }}</p>
   </div>
 
-  <div *ngIf="!currentTutorial.id">
+  <div *ngIf="!currentProducto.id">
     <br />
     <p>Cannot access this Tutorial...</p>
   </div>

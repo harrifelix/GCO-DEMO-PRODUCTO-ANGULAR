@@ -15,13 +15,13 @@
                 </thead>
                 <tbody>
                    
-                    <tr *ngFor="let tutorial of tutorials; let i = index"
+                    <tr *ngFor="let movimiento of movimientos; let i = index"
         [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(tutorial, i)">
-                        <td>{{tutorial.id}}</td>
-                        <td>{{tutorial.tipo}}</td>
-                                <td>{{tutorial.cantidad}}</td>
-                                                <td>{{tutorial.descripcion}}</td>
+        (click)="setActiveProducto(movimiento, i)">
+                        <td>{{movimiento.id}}</td>
+                        <td>{{movimiento.tipo}}</td>
+                                <td>{{movimiento.cantidad}}</td>
+                                                <td>{{movimiento.descripcion}}</td>
                  
              
                     </tr>

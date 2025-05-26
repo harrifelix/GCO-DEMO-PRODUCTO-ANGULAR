@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTutorialComponent } from './components/add-producto/add-producto.component';
+import { AddProductoComponent } from './components/add-producto/add-producto.component';
 import { TutorialDetailsComponent } from './components/producto-details/producto-details.component';
 import { TutorialsListComponent } from './components/producto-list/producto-list.component';
 import { MovimientoListComponent } from './components/movimiento-list/movimiento-list.component';
@@ -13,7 +13,7 @@ import { MovimientoListComponent } from './components/movimiento-list/movimiento
 @NgModule({
   declarations: [
     AppComponent,
-    AddTutorialComponent,
+    AddProductoComponent,
     TutorialDetailsComponent,
     TutorialsListComponent,
     MovimientoListComponent
