@@ -73,13 +73,14 @@
          
                   <div class="form-group">
         <label for="fechaCreacion">fechaCreación</label>
-        <input
+        <input type="date"
           class="form-control"
           id="fechaCreacion"
           required
           [(ngModel)]="tutorial.fechaCreacion"
           name="fechaCreacion"
         />
+        
       </div>
       <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
     </div>
