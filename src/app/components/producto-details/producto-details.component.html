@@ -52,20 +52,82 @@
           type="text"
           class="form-control"
           id="nombre"
+          required
           [(ngModel)]="currentTutorial.nombre"
           name="nombre"
         />
       </div>
+
       <div class="form-group">
         <label for="descripcion">Description</label>
         <input
-          type="text"
           class="form-control"
           id="descripcion"
+          required
           [(ngModel)]="currentTutorial.descripcion"
           name="descripcion"
         />
       </div>
+
+            <div class="form-group">
+        <label for="precio">Precio</label>
+        <input
+          class="form-control"
+          id="precio"
+          required
+          [(ngModel)]="currentTutorial.precio"
+          name="precio"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="number"
+          class="form-control"
+          id="stock"
+          required
+          [(ngModel)]="currentTutorial.stock"
+          name="stock"
+        />
+      </div>
+
+
+       <div class="form-group">
+        <label for="categoria">Categoria</label>
+        <input
+          class="form-control"
+          id="categoria"
+          required
+          [(ngModel)]="currentTutorial.categoria"
+          name="categoria"
+        />
+      </div>
+
+      
+       <div class="form-group">
+        <label for="codigo">Codigo</label>
+        <input
+          class="form-control"
+          id="codigo"
+          required
+          [(ngModel)]="currentTutorial.codigo"
+          name="codigo"
+        />
+      </div>
+
+         
+        <div class="form-group">
+        <label for="fechaCreacion">fechaCreación</label>
+        <input type="date"
+          class="form-control"
+          id="fechaCreacion"
+          required
+          [(ngModel)]="currentTutorial.fechaCreacion"
+          name="fechaCreacion"
+        />
+        
+      </div>
+
   
     </form>
 
