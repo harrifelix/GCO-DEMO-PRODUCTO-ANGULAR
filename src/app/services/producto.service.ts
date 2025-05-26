@@ -36,6 +36,6 @@ export class TutorialService {
   }
 
   findByTitle(codigo: any): Observable<Producto[]> {
-    return this.http.get<Producto[]>(`${baseUrl}?codigo=${codigo}`);
+    return this.http.get<Producto[]>(`${baseUrl}/byCodigo/${codigo}`);
   }
 }

@@ -1,5 +1,6 @@
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentTutorial.id">
+
     <h4>Detalle Producto</h4>
     <div>
       <label><strong>nombre:</strong></label> {{ currentTutorial.nombre }}
@@ -26,7 +27,8 @@
     </div>
              <div>
       <label><strong>Fecha Creación:</strong></label>
-      {{ currentTutorial.fechaCreacion }}
+  
+      {{currentTutorial.fechaCreacion |date:"longDate" }}
     </div>
     <a class="badge badge-warning"
       routerLink="/tutorials/{{ currentTutorial.id }}">

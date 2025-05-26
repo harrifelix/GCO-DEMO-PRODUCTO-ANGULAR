@@ -18,22 +18,41 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <h4>Lista Productos Entrada</h4>
-    <ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let tutorial of tutorials; let i = index"
+  <div class="col-md-9">
+    <h3 class="text-center">Lista Productos </h3>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="color: blue;font-weight: bolder;">Id</th>
+                        <th style="color: green; font-weight: lighter;">Nombre</th>
+                        <th style="color: green; font-weight: lighter;">Descripcion</th>
+
+                           <th style="color: blue;font-weight: bolder;">Precio</th>
+                        <th style="color: green; font-weight: lighter;">Stock</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr *ngFor="let tutorial of tutorials; let i = index"
         [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(tutorial, i)"
-      >
-        {{ tutorial.id }}
-               {{ tutorial.nombre }}
-                      {{ tutorial.descripcion }}
-      </li>
-    </ul>
+        (click)="setActiveTutorial(tutorial, i)">
+                        <td>{{tutorial.id}}</td>
+                        <td>{{tutorial.nombre}}</td>
+                        <td>{{tutorial.descripcion}}</td>
+                       
+                                       <td>{{tutorial.precio}}</td>
+                        <td>{{tutorial.stock}}</td>
+             
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-3">
     <app-producto-details
       [viewMode]="true"
       [currentTutorial]="currentTutorial"
