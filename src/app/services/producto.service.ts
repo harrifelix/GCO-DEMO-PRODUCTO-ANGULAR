@@ -38,4 +38,11 @@ export class TutorialService {
   findByTitle(codigo: any): Observable<Producto> {
     return this.http.get<Producto>(`${baseUrl}/byCodigo/${codigo}`);
   }
+    
+  findByCategoria(categoria: any): Observable<Producto> {
+    return this.http.get<Producto>(`${baseUrl}/byCategoria/${categoria}`);
+  }  
+  findByNombre(nombre: any): Observable<Producto> {
+    return this.http.get<Producto>(`${baseUrl}/byNombre/${nombre}`);
+  }
 }

@@ -12,13 +12,18 @@ export class TutorialsListComponent {
   currentTutorial: Producto = {};
   currentIndex = -1;
   codigo = '';
-
+  criterioBusqueda='';
+ 
   constructor(private tutorialService: TutorialService) {}
 
   ngOnInit(): void {
     this.retrieveTutorials();
   }
-
+     onSelectionChange(event: any) {
+       const selectedValue = event.target.value;
+     this.criterioBusqueda=selectedValue;
+       
+     }
   retrieveTutorials(): void {
     this.tutorialService.getAll().subscribe({
       next: (data) => {
@@ -53,7 +58,23 @@ export class TutorialsListComponent {
   searchTitle(): void {
     this.currentTutorial = {};
     this.currentIndex = -1;
-
+if(this.criterioBusqueda==='1'){
+    this.tutorialService.findByCategoria(this.codigo).subscribe({
+      next: (data) => {
+        this.currentTutorial = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });
+  }if(this.criterioBusqueda==='2'){
+    this.tutorialService.findByNombre(this.codigo).subscribe({
+      next: (data) => {
+        this.currentTutorial = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });
+  }if(this.criterioBusqueda==='3'){
     this.tutorialService.findByTitle(this.codigo).subscribe({
       next: (data) => {
         this.currentTutorial = data;
@@ -61,5 +82,6 @@ export class TutorialsListComponent {
       },
       error: (e) => console.error(e)
     });
+  }
   }
 }

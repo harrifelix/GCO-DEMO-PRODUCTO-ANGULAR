@@ -1,6 +1,13 @@
 <div class="list row">
   <div class="col-md-8">
     <div class="input-group mb-3">
+    
+    <select (change)="onSelectionChange($event)">
+     <option value="1">Categoria</option>
+     <option value="2">Nombre</option>
+     <option value="3">Codigo</option>
+   </select>
+   &nbsp; &nbsp;
       <input
         type="text"
         class="form-control"
