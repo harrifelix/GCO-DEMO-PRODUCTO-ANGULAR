@@ -56,7 +56,7 @@ export class TutorialsListComponent {
 
     this.tutorialService.findByTitle(this.codigo).subscribe({
       next: (data) => {
-        this.tutorials = data;
+        this.currentTutorial = data;
         console.log(data);
       },
       error: (e) => console.error(e)
