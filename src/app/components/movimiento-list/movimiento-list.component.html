@@ -1,18 +1,34 @@
 <div class="list row">
   <div class="col-md-6">
     <h4>Historico Movimientos</h4>
-    <ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let tutorial of tutorials; let i = index"
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="color: blue;font-weight: bolder;">Id</th>
+                        <th style="color: green; font-weight: lighter;">tipo</th>
+                        <th style="color: green; font-weight: lighter;">cantidad</th>
+                        <th style="color: green; font-weight: lighter;">descripción</th>
+     
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr *ngFor="let tutorial of tutorials; let i = index"
         [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(tutorial, i)"
-      >
-        {{ tutorial.id }}
-               {{ tutorial.tipo }}
-                      {{ tutorial.descripcion }}
-      </li>
-    </ul>
+        (click)="setActiveTutorial(tutorial, i)">
+                        <td>{{tutorial.id}}</td>
+                        <td>{{tutorial.tipo}}</td>
+                                <td>{{tutorial.cantidad}}</td>
+                                                <td>{{tutorial.descripcion}}</td>
+                      
+             
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
   </div>
   <div class="col-md-6">
     <app-producto-details
