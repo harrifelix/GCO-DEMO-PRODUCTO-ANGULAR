@@ -6,9 +6,9 @@ import { AddProductoComponent } from './components/add-producto/add-producto.com
 import { MovimientoListComponent } from './components/movimiento-list/movimiento-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'tutorials', pathMatch: 'full' },
-  { path: 'tutorials', component: TutorialsListComponent },
-  { path: 'tutorials/:id', component: TutorialDetailsComponent },
+  { path: '', redirectTo: 'productos', pathMatch: 'full' },
+  { path: 'productos', component: TutorialsListComponent },
+  { path: 'productos/:id', component: TutorialDetailsComponent },
   { path: 'add', component: AddProductoComponent },
   { path: 'movimientos', component: MovimientoListComponent }
 ];

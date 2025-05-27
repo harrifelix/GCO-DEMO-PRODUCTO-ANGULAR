@@ -55,10 +55,10 @@ export class TutorialDetailsComponent {
       .subscribe({
         next: (res) => {
           console.log(res);
-           this.router.navigate(['/tutorials']);
+           this.router.navigate(['/productos']);
           this.message = res.message
             ? res.message
-            : 'This tutorial was updated successfully!';
+            : 'El producto fue actializado correctamente!';
         },
         error: (e) => console.error(e)
       });
@@ -68,7 +68,7 @@ export class TutorialDetailsComponent {
     this.productoService.delete(this.currentProducto.id).subscribe({
       next: (res) => {
         console.log(res);
-        this.router.navigate(['/tutorials']);
+        this.router.navigate(['/productos']);
       },
       error: (e) => console.error(e)
     });

@@ -31,20 +31,20 @@
       {{currentProducto.fechaCreacion |date:"longDate" }}
     </div>
     <a class="badge badge-warning"
-      routerLink="/tutorials/{{ currentProducto.id }}">
+      routerLink="/productos/{{ currentProducto.id }}">
       Edit
     </a>
   </div>
 
   <div *ngIf="!currentProducto">
     <br />
-    <p>Please click on a Tutorial...</p>
+    <p>Please click on a Producto...</p>
   </div>
 </div>
 
 <ng-template #editable>
   <div *ngIf="currentProducto.id" class="edit-form">
-    <h4>Tutorial</h4>
+    <h4>Producto</h4>
     <form>
       <div class="form-group">
         <label for="nombre">Nombre</label>
@@ -147,6 +147,6 @@
 
   <div *ngIf="!currentProducto.id">
     <br />
-    <p>Cannot access this Tutorial...</p>
+    <p>Cannot access this Producto...</p>
   </div>
 </ng-template>

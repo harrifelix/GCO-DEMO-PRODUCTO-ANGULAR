@@ -14,7 +14,7 @@ export class TutorialsListComponent {
   codigo = '';
   criterioBusqueda='';
  
-  constructor(private tutorialService: ProductoService) {}
+  constructor(private productoService: ProductoService) {}
 
   ngOnInit(): void {
     this.retrieveProducto();
@@ -25,7 +25,7 @@ export class TutorialsListComponent {
        
      }
   retrieveProducto(): void {
-    this.tutorialService.getAll().subscribe({
+    this.productoService.getAll().subscribe({
       next: (data) => {
         this.productos = data;
         console.log(data);
@@ -40,8 +40,8 @@ export class TutorialsListComponent {
     this.currentIndex = -1;
   }
 
-  setActiveProducto(tutorial: Producto, index: number): void {
-    this.currentProducto = tutorial;
+  setActiveProducto(producto: Producto, index: number): void {
+    this.currentProducto = producto;
     this.currentIndex = index;
   }
 
@@ -50,7 +50,7 @@ export class TutorialsListComponent {
     this.currentProducto = {};
     this.currentIndex = -1;
 if(this.criterioBusqueda==='1'){
-    this.tutorialService.findByCategoria(this.codigo).subscribe({
+    this.productoService.findByCategoria(this.codigo).subscribe({
       next: (data) => {
         this.currentProducto = data;
         console.log(data);
@@ -58,7 +58,7 @@ if(this.criterioBusqueda==='1'){
       error: (e) => console.error(e)
     });
   }if(this.criterioBusqueda==='2'){
-    this.tutorialService.findByNombre(this.codigo).subscribe({
+    this.productoService.findByNombre(this.codigo).subscribe({
       next: (data) => {
         this.currentProducto = data;
         console.log(data);
@@ -66,7 +66,7 @@ if(this.criterioBusqueda==='1'){
       error: (e) => console.error(e)
     });
   }if(this.criterioBusqueda==='3'){
-    this.tutorialService.findByCodigo(this.codigo).subscribe({
+    this.productoService.findByCodigo(this.codigo).subscribe({
       next: (data) => {
         this.currentProducto = data;
         console.log(data);
